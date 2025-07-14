@@ -14,16 +14,12 @@
           "builder": "@angular/build:application",
           "options": {
             "browser": "src/main.ts",
-            "polyfills": [
-              "zone.js"
-            ],
+            "polyfills": ["zone.js"],
             "tsConfig": "tsconfig.app.json",
-            "assets": [
-              {
-                "glob": "**/*",
-                "input": "public"
-              }
-            ],
+            "assets": [{
+              "glob": "**/*",
+              "input": "public"
+            }],
             "styles": [
               "@angular/material/prebuilt-themes/azure-blue.css",
               "src/styles.css"
@@ -32,7 +28,10 @@
             "outputMode": "server",
             "ssr": {
               "entry": "src/server.ts"
-            }
+            },
+            "baseHref": "/TareaFinal/",
+            "deployUrl": "/TareaFinal/",
+            "outputPath": "dist/Ejercicios"
           },
           "configurations": {
             "production": {
@@ -44,11 +43,13 @@
                 },
                 {
                   "type": "anyComponentStyle",
-                  "maximumWarning": "4kB",
-                  "maximumError": "8kB"
+                  "maximumWarning": "6kB",
+                  "maximumError": "10kB"
                 }
               ],
-              "outputHashing": "all"
+              "outputHashing": "all",
+              "optimization": true,
+              "extractLicenses": true
             },
             "development": {
               "optimization": false,
@@ -70,29 +71,16 @@
           },
           "defaultConfiguration": "development"
         },
-        "extract-i18n": {
-          "builder": "@angular/build:extract-i18n"
-        },
-        "test": {
-          "builder": "@angular/build:karma",
+        "deploy": {
+          "builder": "angular-cli-ghpages:deploy",
           "options": {
-            "polyfills": [
-              "zone.js",
-              "zone.js/testing"
-            ],
-            "tsConfig": "tsconfig.spec.json",
-            "assets": [
-              {
-                "glob": "**/*",
-                "input": "public"
-              }
-            ],
-            "styles": [
-              "@angular/material/prebuilt-themes/azure-blue.css",
-              "src/styles.css"
-            ]
+            "dir": "dist/Ejercicios",
+            "repo": "https://github.com/Rubiss1118/TareaFinal.git",
+            "branch": "gh-pages",
+            "message": "Auto-generated commit"
           }
         }
+
       }
     }
   }
