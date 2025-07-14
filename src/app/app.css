@@ -1,0 +1,31 @@
+/* Estilos generales */
+body { 
+  margin: 0;
+  font-family: 'Roboto', sans-serif;
+  background-color: #f5f5f5;
+}
+
+mat-toolbar {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.spacer {
+  flex: 1 1 auto;
+}
+
+main {
+  padding: 20px;
+}
+
+/* Efecto hover para botones del menú */
+button[mat-menu-item]:hover {
+  background-color: rgba(255, 255, 255, 0.1) !important;
+}
+
+/* Estilo para la ruta activa */
+.active-link {
+  background-color: rgba(255, 255, 255, 0.2);
+  font-weight: bold;
+}
